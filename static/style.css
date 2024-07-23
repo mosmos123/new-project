@@ -1,0 +1,246 @@
+@font-face {
+    font-family: 'myFont';
+    src: url('../static/nasalization-rg.otf') format('opentype');
+    /* Définition de la police 'myFont' */
+}
+@font-face {
+    font-family: 'myFont2';
+    src: url('../static/airstrike.ttf') format('truetype');
+    /* Définition de la police 'myFont2' */
+}
+
+body {
+    font-family: 'myFont';
+    background: url(../static/traffic-lights-sky-before-sunset.jpg);  
+    background-size: cover; 
+    margin: 0;
+    padding: 0;
+    /* Style du corps de la page */
+}
+
+header {
+    background: linear-gradient(to bottom, #2f95ff, #0013a1);
+    padding: 10px;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 6px 5px 4px rgba(0, 0, 0, 0.5);
+    /* Style de l'en-tête */
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 65px;
+    /* Conteneur de l'en-tête */
+}
+
+.logo{
+    width: 10vw;
+    max-width: 70px;
+    height: auto;
+    border-radius: 90px 50px 40px 50px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+    /* Style du logo */
+}
+
+.header-title{
+    font-size: 60px;
+    font-family: 'myFont2';
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;   
+    /* Titre de l'en-tête */
+}
+
+.header-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    /* Centre de l'en-tête */
+}
+
+.rec-link{
+    color: #ffffff;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: bold;
+    /* Style des liens de réception */
+}
+
+.rec-link:hover{
+    text-decoration: underline;
+    /* Style des liens de réception au survol */
+}
+
+form {
+    background: linear-gradient(to bottom, #2f95ff, #0013a1);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 600px;
+    text-align: left;
+    box-shadow: 6px 5px 4px rgba(0, 0, 0, 0.5);
+    /* Style du formulaire */
+}
+
+form input,
+form select,
+form textarea {
+    width: calc(100% - 125px);
+    padding: 10px;
+    border: none;
+    color: #000000;
+    border-radius: 100px;
+    box-sizing: border-box;
+    padding-left: 20px;
+    box-shadow: 6px 5px 4px rgba(0, 0, 0, 0.5);
+    margin-left: 10px;
+    /* Style des champs du formulaire */
+}
+
+.form-row-email {
+    display: flex;
+    align-items: center; 
+    margin-bottom: 20px;
+    /* Style de la rangée des e-mails dans le formulaire */
+}
+
+.form-row-email label {
+    display: block;
+    width: 120px;
+    font-size: 20px;
+    color: #fff;
+    /* Style des labels d'e-mail dans le formulaire */
+}
+
+.form-row-email textarea {
+    padding: 10px;
+    border: none;
+    color: #000000;
+    border-radius: 10px; 
+    box-sizing: border-box;
+    padding-left: 20px;
+    box-shadow: 6px 5px 4px rgba(0, 0, 0, 0.5);
+    /* Style des zones de texte d'e-mail dans le formulaire */
+}
+
+.form-row {
+    display: flex;
+    border-bottom: 2px solid #fff;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    /* Style des rangées du formulaire */
+}
+
+label {
+    display: inline-block;
+    width: 120px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    /* Style des labels du formulaire */
+}
+.label-statut{
+    white-space: nowrap;
+    margin-bottom: 5px;
+}
+button {
+    background: #007BFF;
+    color: #fff;
+    padding: 10px ;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    /* Style des boutons */
+}
+
+.statut-container {
+    background: rgba(134, 193, 255, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 1100px;
+    text-align: center;
+    color: #fff;
+    overflow-x: auto; /* Permet le défilement horizontal si nécessaire */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    color: #333;
+    table-layout: fixed; /* Fixe la largeur des colonnes pour éviter le débordement */
+}
+
+table th,
+table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+    overflow: hidden; /* Cache le texte qui dépasse la cellule */
+    text-overflow: ellipsis; /* Affiche des points de suspension pour le texte long */
+}
+
+table th {
+    background-color: #007EA7;
+    color: #fff;
+    /* Style des en-têtes de table */
+}
+
+/* Réduction des colonnes spécifiques */
+table th:nth-child(1),
+table td:nth-child(1) {
+    width: 4%; /* Réduit la largeur de la colonne ID */
+}
+
+table th:nth-child(8),
+table td:nth-child(8) {
+    width: 5.5%; /* Réduit la largeur de la colonne Statut */
+}
+
+/* Optionnel: Pour permettre le retour à la ligne dans les cellules */
+table td.wrap {
+    white-space: normal; /* Permet le retour à la ligne */
+}
+
+
+.notification {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    width: 80%;
+    z-index: 1;
+    border-radius: 4px;
+    /* Style des notifications */
+}
+
+.notification.error {
+    background-color: #f44336;
+    /* Style des notifications d'erreur */
+}
+
+.notification.show {
+    display: block;
+    animation: slide-down 0.5s ease-out forwards;
+    /* Style des notifications affichées */
+}
+
+@keyframes slide-down {
+    from {
+        top: -50px;
+    }
+    to {
+        top: 0;
+    }
+    /* Animation de glissement des notifications */
+}

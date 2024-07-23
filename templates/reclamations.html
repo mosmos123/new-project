@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réclamations</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/static/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <!-- Inclusion du fichier CSS pour les styles -->
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <!-- Conteneur de l'en-tête -->
+            <div class="header-left">
+                <img class="logo" src="/static/1517507880925.jpg" alt="logo">
+                <!-- Logo de l'entreprise -->
+            </div>
+            <div class="header-center">
+                <h1 class="header-title">Réclamations</h1>
+                <!-- Titre centré de l'en-tête -->
+            </div>
+            <div class="header-right">
+                <a href="/" class="rec-link"> 🏠 Retour à l'Accueil </a>
+                <!-- Lien vers la page d'accueil -->
+            </div>
+        </div>
+    </header>
+    <div class="statut-container">
+        <h2>Filtrer le stock par statut</h2>
+        <!-- Titre de la section de filtrage -->
+        <form method="GET" action="{{ url_for('stock') }}">
+            <!-- Formulaire de filtrage -->
+            <label class="label-statut" for="client">Sélectionnez un statut:</label>
+            <select name="client" id="client">
+                <option value="tous">TOUS</option>
+                <option value="en_cours">EN COURS </option>
+                <option value="traitée">TRAITÉE</option>
+                <option value="non-traitée">NON TRAITÉE</option>
+                <!-- Options pour le filtrage par statut du formulaire -->
+            </select>
+            <button type="submit">Filtrer</button>
+            <!-- Bouton pour soumettre le formulaire de filtrage -->
+        </form>
+        <div class="statut-table">
+            <table id="reclamations-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nom Client</th>
+                        <th>Date</th>
+                        <th>Téléphone</th>
+                        <th>Email</th>
+                        <th>Type de Formulaire</th>
+                        <th>Objet</th>
+                        <th>Statut</th>
+                        <!-- En-têtes des colonnes de la table des réclamations -->
+                    </tr>
+                </thead>
+                <tbody id="reclamations-table-body">
+                    <!-- Les données seront insérées ici par JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="/static/reclamations.js"></script>
+    <!-- Inclusion du fichier JavaScript pour les fonctionnalités -->
+</body>
+</html>

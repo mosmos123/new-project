@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAFARELEC</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/static/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+</head>
+<body>
+    <header>
+        <!-- Conteneur de l'en-tête -->
+        <div class="header-container">
+            <div class="header-left">
+                <!-- Logo de l'entreprise -->
+                <img class="logo" src="../static/1517507880925.jpg" alt="logo">                
+            </div>
+            <div class="header-center">
+                <!-- Titre centré de l'en-tête -->
+                <h1 class="header-title">🏠︎ Acceuil</h1>
+            </div>
+            <div class="header-right">
+                <!-- Lien vers la page des réclamations -->
+                <a href="reclamations.html" class="rec-link"> Voir les Reclamations 📝 </a>                
+            </div>
+        </div>
+    </header>
+    <!-- Conteneur pour les notifications -->
+    <div id="notification" class="notification"></div> 
+    <!-- Formulaire de réclamation -->  
+    <form id="reclamation-form" action="/reclamations" method="POST">
+        <div class="form-row">
+            <!-- Champ pour le nom du client -->
+            <label for="nom">Nom Client:</label>
+            <input type="text" name="nom" id="nom" placeholder="Saisissez votre nom" required>
+        </div>
+        <div class="form-row">
+            <!-- Champ pour la date -->
+            <label for="date">Date:</label>
+            <input type="date" name="date" id="date" required>
+        </div>
+        <div class="form-row">
+            <!-- Champ pour le numéro de téléphone -->
+            <label for="tel">TEL/FIX:</label>
+            <input type="tel" name="tel" id="tel" placeholder="Saisissez votre numero" required>           
+        </div>
+        <div class="form-row">
+            <!-- Champ pour l'email -->
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" placeholder="Saisissez votre Email" required>          
+        </div>
+        <div class="form-row">
+            <!-- Sélection du type de formulaire -->
+            <label for="type_formulaire">Type du formulaire:</label>
+            <select name="type_formulaire" id="type_formulaire" required>
+                <option value="" selected hidden>Choisissez un type de votre formulaire</option>
+                <option value="demande">Demande</option>
+                <option value="reclamation">Reclamation</option>                
+            </select>
+        </div>
+        <div class="form-row">
+            <!-- Champ pour l'objet de la réclamation ou de la demande -->
+            <label for="objet">Objet:</label>
+            <input type="text" name="objet" id="objet" placeholder="Saisissez votre objet" required>            
+        </div>
+        <div class="form-row-email">
+            <!-- Zone de texte pour le message -->
+            <label for="message">formulaire:</label>
+            <textarea id="message" name="message" rows="6" placeholder="Saisissez votre formulaire" required></textarea>            
+        </div>
+        <!-- Bouton de soumission du formulaire -->
+        <button type="submit" id="submit-button">Envoyer</button>        
+    </form>
+    <script src="/static/script.js"></script>
+    <!-- Inclusion du fichier JavaScript pour les fonctionnalités -->
+</body>
+</html>
